@@ -6,7 +6,7 @@ module Foursquare2
     # param [Array] queries the uri encoded request urls
 
     def multi(requests, options = {})
-      escaped_requests = requests.map {|r| CGI.escape(r) }.join(",")
+      escaped_requests = requests.join(",")
 
       options.merge!(requests: escaped_requests)
 
